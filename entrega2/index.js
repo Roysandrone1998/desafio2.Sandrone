@@ -34,9 +34,9 @@ class ProductManager {
     const respuesta = await this.saveFile(this.usuarios);
 
     if (respuesta) {
-      console.log("Usuario creado");
+      console.log("todo bien");
     } else {
-      console.log("Hubo un error al crear un usuario");
+      console.log("Hubo un error ");
     }
   }
 
@@ -47,25 +47,26 @@ class ProductManager {
 }
 
 class Usuario {
-  constructor(nombre, apellido, edad, curso) {
-    this.nombre = nombre;
-    this.apellido = apellido;
-    this.edad = edad;
-    this.curso = curso;
+  constructor(id, title, descripcion, code,stock) {
+    this.id = id;
+    this.title = title;
+    this.descripcion = descripcion;
+    this.code = code;
+    this.stock = stock;
   }
 }
 
 // Pruebas
-const usuario1 = new Usuario("Mariano", "Lopez", 26, "Backend");
-const usuario2 = new Usuario("Felipe", "Lopez", 36, "Backend");
-const usuario3 = new Usuario("Arturo", "Feliz", 26, "Frontend");
+const producto1 = new Usuario(1, "Funda1","falsadescripcion1", 1, 30);
+const producto2 = new Usuario(2, "Funda2","falsadescripcion2", 2, 30);
+const producto3 = new Usuario(3, "Funda3","falsadescripcion3", 3, 30);
 
 const manager = new ProductManager("./Usuarios.json");
 
 // console.log(manager.consultarUsuarios());
-manager.addUsuario(usuario1);
+manager.addUsuario(producto1);
 console.log(manager.consultarUsuarios());
 
-manager.addUsuario(usuario2);
+manager.addUsuario(producto2);
 manager.addUsuario(usuario3);
 console.log(manager.consultarUsuarios());
