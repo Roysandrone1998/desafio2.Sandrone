@@ -28,7 +28,7 @@ class ProductManager {
     }
   }
 
-  async addUsuario(usuario) {
+  async addProducto(usuario) {
     this.usuarios.push(usuario);
 
     const respuesta = await this.saveFile(this.usuarios);
@@ -64,9 +64,9 @@ const producto3 = new Usuario(3, "Funda3","falsadescripcion3", 3, 30);
 const manager = new ProductManager("./Usuarios.json");
 
 // console.log(manager.consultarUsuarios());
-manager.addUsuario(producto1);
+manager.addProducto(producto1);
 console.log(manager.consultarUsuarios());
 
-manager.addUsuario(producto2);
-manager.addUsuario(usuario3);
+manager.addProducto(producto2);
+manager.addProducto(producto3);
 console.log(manager.consultarUsuarios());
